@@ -17,6 +17,14 @@ export default defineConfig({
       '@': pathSrc,
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 配置导入全局变量
+        additionalData: `@use "@/styles/variables.scss" as *;`,
+      },
+    },
+  },
   plugins: [
     vue(),
     AutoImport({

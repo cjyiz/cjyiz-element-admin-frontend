@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-
+import variables from '@/styles/variables.module.scss';
 defineProps<{ msg: string }>();
 
 const count = ref(0);
@@ -9,7 +8,7 @@ const count = ref(0);
 <template>
   <h1>{{ msg }}</h1>
 
-  <div class="card">
+  <div class="card" :style="{ 'background-color': variables.bgColor }">
     <el-button type="success"><i-ep-SuccessFilled />Success</el-button>
     <el-button type="info"><i-ep-InfoFilled />Info</el-button>
     <el-button type="warning"><i-ep-WarningFilled />Warning</el-button>
