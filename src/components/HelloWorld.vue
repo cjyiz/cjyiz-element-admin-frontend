@@ -3,6 +3,8 @@ import variables from '@/styles/variables.module.scss';
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+import { useCounterStore } from '@/store/counter';
+const counterStore = useCounterStore();
 </script>
 
 <template>
@@ -16,6 +18,10 @@ const count = ref(0);
     <el-button type="info"
       ><SvgIcon icon-class="bilibili" />SVG 本地图标</el-button
     >
+    <el-form>
+      <el-form-item label="数字："> {{ counterStore.count }}</el-form-item>
+      <el-form-item label="加倍："> {{ counterStore.double }}</el-form-item>
+    </el-form>
   </div>
 
   <p>

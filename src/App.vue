@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCounterStore } from '@/store/counter';
+const counterStore = useCounterStore();
+</script>
 
 <template>
   <div>
@@ -9,6 +12,7 @@
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <el-button type="primary" @click="counterStore.increment">count++</el-button>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
