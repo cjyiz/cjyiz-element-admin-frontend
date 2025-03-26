@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { useCounterStore } from '@/store/counter';
+import { useUserStoreHook } from './store/user';
+import { LoginData } from './api/auth/type';
 const counterStore = useCounterStore();
+const userStore = useUserStoreHook();
+console.log('cjyiz开始登录');
+const data: LoginData = {
+  'username': '浪子鉴权测试2',
+  'password': '12345678',
+};
+userStore.login(data);
 </script>
 
 <template>

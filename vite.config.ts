@@ -32,10 +32,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       open: true,
       proxy: {
         [env.VITE_APP_BASE_API]: {
-          target: 'http://vapi.youlai.tech',
+          target: 'http://localhost:3006/',
           changeOrigin: true,
+          secure: false,
           rewrite: (path) =>
-            path.replace(new RegExp('^' + env.VITE_APP_BASE_API), ''),
+            path.replace(new RegExp(env.VITE_APP_BASE_API), ''),
         },
       },
     },

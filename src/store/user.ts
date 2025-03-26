@@ -22,8 +22,9 @@ export const useUserStoreHook = defineStore('user', () => {
     return new Promise<void>((resolve, reject) => {
       loginApi(loginData)
         .then((response) => {
-          const { tokenType, accessToken } = response.data;
-          token.value = tokenType + ' ' + accessToken; // Bearer eyJhbGciOiJIUzI1NiJ9.xxx.xxx
+          console.log('cjyiz获取的token');
+          // const { tokenType, accessToken } = response.data;
+          // token.value = tokenType + ' ' + accessToken; // Bearer eyJhbGciOiJIUzI1NiJ9.xxx.xxx
           resolve();
         })
         .catch((error) => {
@@ -32,5 +33,5 @@ export const useUserStoreHook = defineStore('user', () => {
     });
   }
 
-  return { username, token, increment };
+  return { username, token, increment, login };
 });
